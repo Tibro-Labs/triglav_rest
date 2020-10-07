@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Triglav</display-name>
+  	<servlet>
+		<servlet-name>Triglav Rest WebServices</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+        <param-name>jersey.config.server.provider.packages</param-name>
+        <param-value>com.prtech.triglav_rest;com.prtech.triglav_plugins</param-value>
+    </init-param>
+    <init-param>
+    <param-name>jersey.config.server.provider.classnames</param-name>
+    <param-value>org.glassfish.jersey.media.multipart.MultiPartFeature</param-value>
+</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Triglav Rest WebServices</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<resource-ref>
+      <description>Svarog JNDI DbConn</description>
+      <res-ref-name>jdbc/svarog</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  	</resource-ref>
+  	<context-param>
+    	<param-name>kibs_check.url</param-name>
+    	<param-value>http://192.168.10.21:8080/kibs-crosscheck/kibs_check.jsp</param-value>
+	</context-param>
+  
+</web-app>

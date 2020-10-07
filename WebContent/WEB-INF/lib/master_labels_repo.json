@@ -1,0 +1,86 @@
+{
+  "com.prtech.svarog.DbDataTable": {
+    "object_id": 6,
+    "repo_name": "{MASTER_REPO}",
+    "table_name": "{REPO_TABLE_NAME}_labels",
+    "schema": "{DEFAULT_SCHEMA}",
+    "system_table": true,
+    "repo_table": false,
+    "dbTableFields": [
+      {
+        "com.prtech.svarog.DbDataField": {
+          "field_name": "PKID",
+          "field_type": "NUMERIC",
+          "field_size": 18,
+          "field_scale": 0,
+          "is_null": false,
+          "is_unique": false,
+          "is_primary_key": true,
+          "unique_level": "NOT_UNIQUE",
+          "label_code": "master_repo.table_meta_pkid",
+          "is_updateable": true,
+          "sort_order": 100
+        }
+      },
+      {
+        "com.prtech.svarog.DbDataField": {
+          "field_name": "LABEL_CODE",
+          "field_type": "NVARCHAR",
+          "field_size": 100,
+          "is_null": false,
+          "is_unique": true,
+          "is_primary_key": false,
+          "unique_level": "TABLE",
+          "label_code": "master_repo.label_code",
+          "is_updateable": true,
+          "sort_order": 200
+        }
+      },
+      {
+        "com.prtech.svarog.DbDataField": {
+          "field_name": "LABEL_TEXT",
+          "field_type": "NVARCHAR",
+          "field_size": 200,
+          "is_null": false,
+          "is_unique": false,
+          "is_primary_key": false,
+          "unique_level": "NOT_UNIQUE",
+          "label_code": "master_repo.label_text",
+          "is_updateable": true,
+          "sort_order": 300
+        }
+      },
+      {
+        "com.prtech.svarog.DbDataField": {
+          "field_name": "LOCALE_ID",
+          "field_type": "NVARCHAR",
+          "field_size": 10,
+          "is_null": false,
+          "is_unique": true,
+          "is_primary_key": false,
+          "unique_level": "TABLE",
+          "label_code": "master_repo.localed_id",
+          "is_updateable": true,
+          "sort_order": 400
+        }
+      },
+      {
+        "com.prtech.svarog.DbDataField": {
+          "field_name": "LABEL_DESCR",
+          "field_type": "NVARCHAR",
+          "field_size": 2000,
+          "is_null": true,
+          "is_unique": false,
+          "is_primary_key": false,
+          "unique_level": "NOT_UNIQUE",
+          "label_code": "master_repo.label_desc",
+          "is_updateable": true,
+          "sort_order": 500
+        }
+      }
+    ],
+    "label_code": "master_repo.labels",
+    "use_cache": true,
+    "gui_metadata": "{\"hidden\":true,\"editoptions\":{\"readonly\":true}}"
+  }
+}

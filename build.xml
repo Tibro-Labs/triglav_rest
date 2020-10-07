@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="antlib:org.apache.tools.ant" name="triglav_rest">
+   <target name="triglav_rest">
+      <javac encoding="UTF-8" debuglevel="lines,vars,source" includeantruntime="false" debug="true" srcdir="src" destdir="src">
+	<compilerarg line="-XDignore.symbol.file=true" />
+         <classpath>
+            <fileset dir="/usr/share/tomcat7/lib">
+               <include name="**/*.jar" />
+            </fileset>
+            <fileset dir="WebContent/WEB-INF/lib/">
+               <include name="**/*.jar" />
+            </fileset>
+            <fileset dir="/usr/lib/jvm/java-8-oracle/jre/lib">
+               <include name="**/*.jar" />
+            </fileset>
+         </classpath>
+      </javac>
+      <war destfile="../build/triglav_rest.war" webxml="WebContent/WEB-INF/web.xml">
+         <manifest>
+           <attribute name="Built-On" value="${build-info.current-date}" />
+           <attribute name="Built-At" value="${build-info.current-time}" />
+           <attribute name="Pipeline-ID" value="${CI_PIPELINE_ID}" />
+           <attribute name="Git-Branch" value="${CI_COMMIT_REF_NAME}" />
+           <attribute name="Commit" value="${commit_sha}" />
+         </manifest>
+         <fileset dir="WebContent">
+            <include name="**/*.*" />
+         </fileset>
+         <classes dir="src" excludes="**/*.java"/>
+      </war>
+   </target>
+</project>
